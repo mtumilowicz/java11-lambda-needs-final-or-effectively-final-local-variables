@@ -1,14 +1,34 @@
 # java11-lambda-needs-final-or-effectively-final-local-variables
+_Reference_: https://www.amazon.com/Modern-Java-Action-functional-programming/dp/1617293563
 
-good idea, but not exactly right:
+# preface
 
-RESTRICTIONS ON LOCAL VARIABLES
-You may be asking yourself why local variables have these restrictions. First, there’s a
-key difference in how instance and local variables are implemented behind the
-scenes. Instance variables are stored on the heap, whereas local variables live on
-the stack. If a lambda could access the local variable directly and the lambda were
-used in a thread, then the thread using the lambda could try to access the variable
-after the thread that allocated the variable had deallocated it. Hence, Java implements
-access to a free local variable as access to a copy of it rather than access to the original
-variable. This makes no difference if the local variable is assigned to only once—
-hence the restriction.
+# project description
+```
+class Restriction {
+    private int counter = 0;
+    
+    public void field() {
+        Consumer<Object> c = x -> counter++;
+        c.accept(new Object());
+    }
+    
+    public void local() {
+        int counter = 0;
+
+        Consumer<Object> c = x -> counter++; // Compile-time error: Variable used in lambda expression should be final or effectively final
+        c.accept(new Object());
+    }
+}
+```
+
+# discussion
+* local primitive variables
+    Local primitive variables live on the stack. If a lambda could access local primitive variable 
+    directly and the lambda were used in a thread, then the thread using the lambda could try to 
+    access the variable after the thread that allocated the variable had deallocated it. Hence, 
+    Java implements access to local primitive variable as access to a copy of it rather than access 
+    to the original variable. This makes no difference if the local variable is assigned to only 
+    once - hence the restriction.
+* local reference variables
+    Same reasoning as above, but instead of "local primitive variable" use "reference".
