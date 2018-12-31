@@ -38,7 +38,7 @@ class Restriction {
 You may be asking yourself why local variables have these restrictions?
 
 # explanation
-* local primitive variables
+* **local primitive variables**
 
     Local primitive variables live on the stack. If a lambda could access local primitive variable 
     directly and the lambda were used in a thread, then the thread using the lambda could try to 
@@ -46,6 +46,6 @@ You may be asking yourself why local variables have these restrictions?
     Java implements access to local primitive variable as access to a copy of it rather than access 
     to the original variable. This makes no difference if the local variable is assigned to only 
     once - hence the restriction.
-* local reference variables
+* **references to local variables**
 
     Same reasoning as above, but instead of "local primitive variable" use "reference".
