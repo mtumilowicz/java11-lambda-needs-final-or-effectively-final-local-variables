@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-lambda-needs-final-or-effectively-final-local-variables.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-lambda-needs-final-or-effectively-final-local-variables)
+
 # java11-lambda-needs-final-or-effectively-final-local-variables
 _Reference_: https://www.amazon.com/Modern-Java-Action-functional-programming/dp/1617293563  
 _Reference_: https://docs.oracle.com/javase/specs/jls/se11/jls11.pdf
