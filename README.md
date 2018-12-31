@@ -1,7 +1,11 @@
 # java11-lambda-needs-final-or-effectively-final-local-variables
-_Reference_: https://www.amazon.com/Modern-Java-Action-functional-programming/dp/1617293563
+_Reference_: https://www.amazon.com/Modern-Java-Action-functional-programming/dp/1617293563  
+_Reference_: https://docs.oracle.com/javase/specs/jls/se11/jls11.pdf
 
 # preface
+Any local variable, formal parameter, or exception parameter used but not declared
+in a lambda expression must either be declared final or be effectively final, 
+or a compile-time error occurs where the use is attempted.
 
 # project description
 ```
