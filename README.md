@@ -39,6 +39,7 @@ You may be asking yourself why local variables have these restrictions?
 
 # explanation
 * local primitive variables
+
     Local primitive variables live on the stack. If a lambda could access local primitive variable 
     directly and the lambda were used in a thread, then the thread using the lambda could try to 
     access the variable after the thread that allocated the variable had deallocated it. Hence, 
@@ -46,4 +47,5 @@ You may be asking yourself why local variables have these restrictions?
     to the original variable. This makes no difference if the local variable is assigned to only 
     once - hence the restriction.
 * local reference variables
+
     Same reasoning as above, but instead of "local primitive variable" use "reference".
