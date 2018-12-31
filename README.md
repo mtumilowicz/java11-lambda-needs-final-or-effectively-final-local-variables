@@ -16,8 +16,8 @@ or a compile-time error occurs where the use is attempted.
 
 # project description
 As you may see from the code below:
-* you can modify instance variables in lambda
-* you cannot modify local variables in lambda
+* you **can** access not effectively final instance variables in lambda expression
+* you **cannot** access not effectively final local variables in lambda expression
 
 ```
 class Restriction {
