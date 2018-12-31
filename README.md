@@ -14,8 +14,8 @@ or a compile-time error occurs where the use is attempted.
 
 # project description
 As you may see from the code below:
-* you can modify instance variables
-* you cannot modify local variables
+* you can modify instance variables in lambda
+* you cannot modify local variables in lambda
 
 ```
 class Restriction {
