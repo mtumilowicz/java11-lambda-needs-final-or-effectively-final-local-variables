@@ -11,7 +11,12 @@ modifier is removed.
 Any local variable, formal parameter, or exception parameter used but not declared
 in a lambda expression must either be declared final or be effectively final, 
 or a compile-time error occurs where the use is attempted.
+
 # project description
+As you may see from the code below:
+* you can modify instance variables
+* you cannot modify local variables
+
 ```
 class Restriction {
     private int counter = 0;
@@ -30,7 +35,9 @@ class Restriction {
 }
 ```
 
-# discussion
+You may be asking yourself why local variables have these restrictions?
+
+# explanation
 * local primitive variables
     Local primitive variables live on the stack. If a lambda could access local primitive variable 
     directly and the lambda were used in a thread, then the thread using the lambda could try to 
